@@ -210,9 +210,32 @@ public class startcutscene : MonoBehaviour
         yield break;
     }
 
+    IEnumerator EndText(float duration)
+    {
+        var runtime12 = 0.0f;
+
+        while (runtime12 < duration)
+        {
+            runtime12 += Time.deltaTime;
+            Color c = UI_Panel.GetComponent<Image>().material.color; 
+        	c.a = 0.375f - runtime12 / 4f; 
+        	UI_Panel.GetComponent<Image>().material.color = c;    
+            yield return null;
+        }
+        yield return null;
+        StartCoroutine(NextScene());
+        yield break;
+    }
+
+    IEnumerator NextScene()
+    {
+        Debug.Log("a");
+        yield return null;
+    }
+
+
     IEnumerator Talk_Start(float duration)
     {
-        bool istalking = true;
         bool ischoose = false;
         istalk = 0;
         var runtime9 = 0.0f;
@@ -226,7 +249,7 @@ public class startcutscene : MonoBehaviour
         }
         StartCoroutine(typingtext.Typing(textfield_name, textfield_text, istalk, 0.1f));
         yield return null;
-        while(istalking)
+        while(true)
         {
             if(Input.GetMouseButtonDown(0) && typingtext.talking == false && istalk < 2)
             {
@@ -234,14 +257,14 @@ public class startcutscene : MonoBehaviour
                 StartCoroutine(typingtext.Typing(textfield_name, textfield_text, ++istalk, 0.1f));
                 yield return null;
             }
-            if(Input.GetMouseButtonDown(0) && typingtext.talking == false && istalk == 2)
+            if(typingtext.talking == false && istalk == 2)
             {
-                istalking = false;
+                break;
             }
             yield return null;
         }
-        StartCoroutine(typingtext.Typing2(choose1, "누구세요?", 0.03f));
-        StartCoroutine(typingtext.Typing2(choose2, "여기가 어딘가요?", 0.03f));
+        StartCoroutine(typingtext.Typing_C(choose1, "머리 아파...", 0.03f));
+        StartCoroutine(typingtext.Typing_C(choose2, "누구세요...?", 0.03f));
         yield return null;
         while(ischoose != true)
         {
@@ -273,16 +296,78 @@ public class startcutscene : MonoBehaviour
             }
             yield return null;
         }
-        StartCoroutine(typingtext.Typing2(choose1, " ", 0f));
-        StartCoroutine(typingtext.Typing2(choose2, " ", 0f));
+        ischoose = false;
+        StartCoroutine(typingtext.Typing_C(choose1, " ", 0f));
+        StartCoroutine(typingtext.Typing_C(choose2, " ", 0f));
         StartCoroutine(typingtext.Typing(textfield_name, textfield_text, ++istalk, 0.1f));
-        /*while (runtime12 < duration)
+        while(true)
         {
-            runtime12 += Time.deltaTime;
-            Color c = UI_Panel.GetComponent<Image>().material.color; 
-        	c.a = 0.375f - runtime12 / 4f; 
-        	UI_Panel.GetComponent<Image>().material.color = c;    
+            if(Input.GetMouseButtonDown(0) && typingtext.talking == false && istalk < 5)
+            {
+                yield return new WaitForSeconds(0.5f);
+                StartCoroutine(typingtext.Typing(textfield_name, textfield_text, ++istalk, 0.1f));
+                yield return null;
+            }
+            if(typingtext.talking == false && istalk == 5)
+            {
+                break;
+            }
             yield return null;
-        }*/
+            
+        }
+        StartCoroutine(typingtext.Typing_C(choose1, "선생님...?", 0.03f));
+        StartCoroutine(typingtext.Typing_C(choose2, "오늘 무슨 날이야...?", 0.03f));
+        yield return null;
+        while(ischoose != true)
+        {
+            Vector3 point = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, -Camera.main.transform.position.z));
+            if(point.x > 0.4 && point.x < 9 && point.y > -2.3 && point.y < -1.8)
+            {
+                choose_Enter = 1;
+                choose1.color = new Color32(255, 255, 255, 255);
+                choose2.color = new Color32(197, 197, 197, 255);
+                if(Input.GetMouseButtonDown(0))
+                {
+                    ischoose = true;
+                }
+            }
+            else if(point.x > 0.4 && point.x < 9 && point.y > -2.8 && point.y < -2.3)
+            {
+                choose_Enter = 2;
+                choose2.color = new Color32(255, 255, 255, 255);
+                choose1.color = new Color32(197, 197, 197, 255);
+                if(Input.GetMouseButtonDown(0))
+                {
+                    ischoose = true;
+                }
+            }
+            else
+            {
+                choose1.color = new Color32(197, 197, 197, 255);
+                choose2.color = new Color32(197, 197, 197, 255);
+            }
+            yield return null;
+        }
+        ischoose = false;
+        StartCoroutine(typingtext.Typing_C(choose1, " ", 0f));
+        StartCoroutine(typingtext.Typing_C(choose2, " ", 0f));
+        StartCoroutine(typingtext.Typing(textfield_name, textfield_text, ++istalk, 0.1f));
+        while(true)
+        {
+            if(Input.GetMouseButtonDown(0) && typingtext.talking == false && istalk < 8)
+            {
+                yield return new WaitForSeconds(0.5f);
+                StartCoroutine(typingtext.Typing(textfield_name, textfield_text, ++istalk, 0.1f));
+                yield return null;
+            }
+            if(typingtext.talking == false && istalk == 8)
+            {
+                break;
+            }
+            
+            yield return null;
+        }
+        StartCoroutine(EndText(1.5f));
+        
     }
 }
