@@ -1,0 +1,37 @@
+{
+	"Version": 3,
+	"Parameters": [
+		{
+			"Id": "Param",
+			"GroupId": "",
+			"Name": "머리"
+		}
+	],
+	"ParameterGroups": [],
+	"Parts": [
+		{
+			"Id": "PartHairFront",
+			"Name": "앞머리"
+		},
+		{
+			"Id": "PartEye",
+			"Name": "눈"
+		},
+		{
+			"Id": "PartMouth",
+			"Name": "입"
+		},
+		{
+			"Id": "PartBody",
+			"Name": "몸"
+		},
+		{
+			"Id": "PartHairBack",
+			"Name": "뒷머리"
+		},
+		{
+			"Id": "PartBackground",
+			"Name": "배경"
+		}
+	]
+}

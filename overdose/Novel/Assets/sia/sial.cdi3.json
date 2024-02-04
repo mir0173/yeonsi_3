@@ -1,0 +1,33 @@
+{
+	"Version": 3,
+	"Parameters": [
+		{
+			"Id": "Param",
+			"GroupId": "",
+			"Name": "움직임"
+		}
+	],
+	"ParameterGroups": [],
+	"Parts": [
+		{
+			"Id": "PartRough",
+			"Name": "러프"
+		},
+		{
+			"Id": "PartHairFront",
+			"Name": "앞머리"
+		},
+		{
+			"Id": "PartBody",
+			"Name": "몸"
+		},
+		{
+			"Id": "PartHairBack",
+			"Name": "뒷머리"
+		},
+		{
+			"Id": "PartSketch",
+			"Name": "[ 밑그림 ]"
+		}
+	]
+}
