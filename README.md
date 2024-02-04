@@ -5,3 +5,28 @@ bukgwakdose(Visual Novel Version 3)</b></h1>
 <img src="https://img.shields.io/badge/made by-mir0173-red">
 <img src="https://img.shields.io/badge/Unity-3.26-yellow">
 </p>
+<br/><br/><br/><br/>
+
+동아리 개인 프로젝트
+
+|9~12|1|2(예상)|3~(예상)|
+|---|---|---|---|
+|스토리 초안, 시작화면, 입력화면|씬 전환, 컷씬 1 시작|컷씬 2, 튜토리얼|메인 게임 개발 시작|
+||||
+
+
+
+<br/><br/><br/>
+
+현재 완료 상황
+>시작 화면<br/>
+>씬 전환<br/>
+>이름 입력<br/>
+>컷씬 1<br/>
+
+
+현재 진행중인 상황
+>컷씬 2 구상중<br/>
+
+<br/>
+<p align="center"><b>진행중인 프로젝트</b></p>
