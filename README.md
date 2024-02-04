@@ -28,5 +28,5 @@ bukgwakdose(Visual Novel Version 3)</b></h1>
 현재 진행중인 상황
 >컷씬 2 구상중<br/>
 
-<br/>
+<br/><br/><br/><br/>
 <p align="center"><b>진행중인 프로젝트</b></p>
