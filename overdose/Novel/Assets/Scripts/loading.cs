@@ -8,7 +8,7 @@ public class loading : MonoBehaviour
 
     public CanvasGroup Fade_img;
     public GameObject Loading;
-    float fadeDuration = 1f   ; 
+    float fadeDuration = 1f; 
     public static string nextScene;
     private float a;
 

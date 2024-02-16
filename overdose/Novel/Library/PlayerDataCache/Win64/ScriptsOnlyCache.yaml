@@ -3,6 +3,7 @@ ScriptsOnlyBuild:
     Assembly-CSharp.dll:
     - Mouseclick
     - cursor
+    - cutscene2
     - dontdes
     - inputname
     - loading
@@ -127,11 +128,11 @@ ScriptsOnlyBuild:
     - Class: 104
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 1656}
+      Script: {instanceID: 1654}
     - Class: 114
-      Script: {instanceID: 2886}
+      Script: {instanceID: 2884}
     - Class: 114
-      Script: {instanceID: 3126}
+      Script: {instanceID: 3124}
     - Class: 114
       Script: {instanceID: 5952}
     - Class: 114
@@ -160,7 +161,56 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 224
       Script: {instanceID: 0}
-    - Class: 225
+    Assets/Scenes/CutScene2.unity:
+    - Class: 1
+      Script: {instanceID: 0}
+    - Class: 4
+      Script: {instanceID: 0}
+    - Class: 20
+      Script: {instanceID: 0}
+    - Class: 21
+      Script: {instanceID: 0}
+    - Class: 28
+      Script: {instanceID: 0}
+    - Class: 48
+      Script: {instanceID: 0}
+    - Class: 81
+      Script: {instanceID: 0}
+    - Class: 104
+      Script: {instanceID: 0}
+    - Class: 114
+      Script: {instanceID: 1654}
+    - Class: 114
+      Script: {instanceID: 2884}
+    - Class: 114
+      Script: {instanceID: 3124}
+    - Class: 114
+      Script: {instanceID: 5704}
+    - Class: 114
+      Script: {instanceID: 5952}
+    - Class: 114
+      Script: {instanceID: 6660}
+    - Class: 114
+      Script: {instanceID: 6860}
+    - Class: 114
+      Script: {instanceID: 7256}
+    - Class: 115
+      Script: {instanceID: 0}
+    - Class: 128
+      Script: {instanceID: 0}
+    - Class: 157
+      Script: {instanceID: 0}
+    - Class: 196
+      Script: {instanceID: 0}
+    - Class: 212
+      Script: {instanceID: 0}
+    - Class: 213
+      Script: {instanceID: 0}
+    - Class: 222
+      Script: {instanceID: 0}
+    - Class: 223
+      Script: {instanceID: 0}
+    - Class: 224
       Script: {instanceID: 0}
     Assets/Scenes/Inputname.unity:
     - Class: 1
@@ -180,15 +230,15 @@ ScriptsOnlyBuild:
     - Class: 104
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 1656}
+      Script: {instanceID: 1654}
     - Class: 114
-      Script: {instanceID: 2484}
+      Script: {instanceID: 2482}
     - Class: 114
-      Script: {instanceID: 2886}
+      Script: {instanceID: 2884}
     - Class: 114
-      Script: {instanceID: 3126}
+      Script: {instanceID: 3124}
     - Class: 114
-      Script: {instanceID: 3178}
+      Script: {instanceID: 3176}
     - Class: 114
       Script: {instanceID: 6278}
     - Class: 114
@@ -243,43 +293,43 @@ ScriptsOnlyBuild:
     - Class: 104
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 1656}
+      Script: {instanceID: 1654}
+    - Class: 114
+      Script: {instanceID: 1728}
     - Class: 114
       Script: {instanceID: 1730}
     - Class: 114
-      Script: {instanceID: 1732}
+      Script: {instanceID: 1958}
     - Class: 114
-      Script: {instanceID: 1960}
+      Script: {instanceID: 2162}
     - Class: 114
-      Script: {instanceID: 2164}
+      Script: {instanceID: 2372}
     - Class: 114
-      Script: {instanceID: 2374}
+      Script: {instanceID: 2502}
     - Class: 114
-      Script: {instanceID: 2504}
+      Script: {instanceID: 2884}
     - Class: 114
-      Script: {instanceID: 2886}
+      Script: {instanceID: 3046}
     - Class: 114
-      Script: {instanceID: 3048}
+      Script: {instanceID: 3124}
     - Class: 114
-      Script: {instanceID: 3126}
+      Script: {instanceID: 3250}
     - Class: 114
-      Script: {instanceID: 3252}
+      Script: {instanceID: 3272}
     - Class: 114
-      Script: {instanceID: 3274}
+      Script: {instanceID: 3672}
     - Class: 114
-      Script: {instanceID: 3674}
+      Script: {instanceID: 3914}
     - Class: 114
-      Script: {instanceID: 3916}
+      Script: {instanceID: 4052}
     - Class: 114
-      Script: {instanceID: 4054}
+      Script: {instanceID: 4294}
     - Class: 114
-      Script: {instanceID: 4296}
+      Script: {instanceID: 4754}
     - Class: 114
-      Script: {instanceID: 4756}
+      Script: {instanceID: 5076}
     - Class: 114
-      Script: {instanceID: 5078}
-    - Class: 114
-      Script: {instanceID: 5700}
+      Script: {instanceID: 5698}
     - Class: 114
       Script: {instanceID: 5840}
     - Class: 114
@@ -352,13 +402,13 @@ ScriptsOnlyBuild:
     - Class: 104
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 1656}
+      Script: {instanceID: 1654}
     - Class: 114
-      Script: {instanceID: 2886}
+      Script: {instanceID: 2884}
     - Class: 114
-      Script: {instanceID: 3126}
+      Script: {instanceID: 3124}
     - Class: 114
-      Script: {instanceID: 3886}
+      Script: {instanceID: 3884}
     - Class: 114
       Script: {instanceID: 6660}
     - Class: 114
@@ -1134,6 +1184,12 @@ ScriptsOnlyBuild:
     className: CubismPartColorsEditor
   - hash:
       serializedVersion: 2
+      Hash: df2ee57365051f87a31d27f09ddf8d65
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: cutscene2
+  - hash:
+      serializedVersion: 2
       Hash: 77aaaaa51f7a8d8ff333a879741e47d2
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
@@ -1602,7 +1658,7 @@ ScriptsOnlyBuild:
     className: SpriteLibraryAsset
   - hash:
       serializedVersion: 2
-      Hash: 4763e47f7e749d71ffe8b9e08cb4bfd9
+      Hash: 2415db19950257fb7e08a0009a0ffa24
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: startcutscene
@@ -1732,4 +1788,5 @@ ScriptsOnlyBuild:
   - Assets/Scenes/loading.unity
   - Assets/Scenes/Inputname.unity
   - Assets/Scenes/CutScene1.unity
-  playerPath: C:/Users/ASUS/Downloads/Novel.exe
+  - Assets/Scenes/CutScene2.unity
+  playerPath: C:/game/Novel.exe

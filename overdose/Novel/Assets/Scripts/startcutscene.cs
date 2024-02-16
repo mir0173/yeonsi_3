@@ -1,9 +1,8 @@
-    using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
-using DG.Tweening;
 using TMPro;
 
 public class startcutscene : MonoBehaviour
@@ -12,9 +11,8 @@ public class startcutscene : MonoBehaviour
     public TMP_Text textfield_name;
     public TMP_Text choose1;
     public TMP_Text choose2;
-    public static int istalk;
-    public CanvasGroup Fade_img;
-    float fadeDuration = 1.0f; 
+    public int istalk;
+    public static float speed = 1f;
     private Vector3 Position_Default = new Vector3(6.5f, 3.5f, 0f);
     private Vector3 Position_End = new Vector3(0f, 0f, 0f);
     private Vector3 Position_Default2 = new Vector3(0f, 0f, 0f);
@@ -25,8 +23,6 @@ public class startcutscene : MonoBehaviour
     private Vector3 Scale_End = new Vector3(2f, 2f, 2f);
     private Vector3 Scale_Default2 = new Vector3(6f, 6f, 6f);
     private Vector3 Scale_End2 = new Vector3(3.5f, 3.5f, 3.5f);
-    private float m_RunTime = 2.0f;
-
     public GameObject UI_Panel;
     public GameObject ChooseBox;
     public GameObject obj;
@@ -58,21 +54,15 @@ public class startcutscene : MonoBehaviour
         ChooseBox.GetComponent<Image>().material.color = f;
         choose1.color = new Color(197, 197, 197);
         choose2.color = new Color(197, 197, 197);
-        Fade_img.DOFade(0, fadeDuration)
-        .OnStart(()=>{
+        StartCoroutine(typingtext.Setname());
+        StartCoroutine(Fade5(2.0f));
 
-        })
-        .OnComplete(()=>{
-            Fade_img.blocksRaycasts = false;
-            StartCoroutine(Fade5(m_RunTime));
-            
-        });
     }
 
     // Update is called once per frame
     void Update()
     {
-
+        
     }
 
     IEnumerator Fade5(float duration)
@@ -223,14 +213,25 @@ public class startcutscene : MonoBehaviour
             yield return null;
         }
         yield return null;
-        StartCoroutine(NextScene());
+        StartCoroutine(NextScene(1.0f));
         yield break;
     }
 
-    IEnumerator NextScene()
+    IEnumerator NextScene(float duration)
     {
-        Debug.Log("a");
+        var runtime13 = 0.0f;
+
+        while (runtime13 < duration)
+        {
+            runtime13 += Time.deltaTime;
+            Color c = obj3.GetComponent<Renderer>().material.color; 
+        	c.a = 1 - runtime13 * runtime13 / 1; 
+        	obj3.GetComponent<Renderer>().material.color = c;    
+            yield return null;
+        }
+        SceneManager.LoadScene("CutScene2");
         yield return null;
+        yield break;
     }
 
 
@@ -247,14 +248,14 @@ public class startcutscene : MonoBehaviour
         	UI_Panel.GetComponent<Image>().material.color = y;    
             yield return null;
         }
-        StartCoroutine(typingtext.Typing(textfield_name, textfield_text, istalk, 0.1f));
+        StartCoroutine(typingtext.Typing(textfield_name, textfield_text, istalk, 0.07f * speed));
         yield return null;
         while(true)
         {
-            if(Input.GetMouseButtonDown(0) && typingtext.talking == false && istalk < 2)
+            if((Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Space)) && typingtext.talking == false && istalk < 2)
             {
                 yield return new WaitForSeconds(0.5f);
-                StartCoroutine(typingtext.Typing(textfield_name, textfield_text, ++istalk, 0.1f));
+                StartCoroutine(typingtext.Typing(textfield_name, textfield_text, ++istalk, 0.07f * speed));
                 yield return null;
             }
             if(typingtext.talking == false && istalk == 2)
@@ -299,13 +300,13 @@ public class startcutscene : MonoBehaviour
         ischoose = false;
         StartCoroutine(typingtext.Typing_C(choose1, " ", 0f));
         StartCoroutine(typingtext.Typing_C(choose2, " ", 0f));
-        StartCoroutine(typingtext.Typing(textfield_name, textfield_text, ++istalk, 0.1f));
+        StartCoroutine(typingtext.Typing(textfield_name, textfield_text, ++istalk, 0.07f * speed));
         while(true)
         {
-            if(Input.GetMouseButtonDown(0) && typingtext.talking == false && istalk < 5)
+            if((Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Space)) && typingtext.talking == false && istalk < 5)
             {
                 yield return new WaitForSeconds(0.5f);
-                StartCoroutine(typingtext.Typing(textfield_name, textfield_text, ++istalk, 0.1f));
+                StartCoroutine(typingtext.Typing(textfield_name, textfield_text, ++istalk, 0.07f * speed));
                 yield return null;
             }
             if(typingtext.talking == false && istalk == 5)
@@ -351,13 +352,13 @@ public class startcutscene : MonoBehaviour
         ischoose = false;
         StartCoroutine(typingtext.Typing_C(choose1, " ", 0f));
         StartCoroutine(typingtext.Typing_C(choose2, " ", 0f));
-        StartCoroutine(typingtext.Typing(textfield_name, textfield_text, ++istalk, 0.1f));
+        StartCoroutine(typingtext.Typing(textfield_name, textfield_text, ++istalk, 0.07f * speed));
         while(true)
         {
-            if(Input.GetMouseButtonDown(0) && typingtext.talking == false && istalk < 8)
+            if((Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Space)) && typingtext.talking == false && istalk < 8)
             {
                 yield return new WaitForSeconds(0.5f);
-                StartCoroutine(typingtext.Typing(textfield_name, textfield_text, ++istalk, 0.1f));
+                StartCoroutine(typingtext.Typing(textfield_name, textfield_text, ++istalk, 0.07f * speed));
                 yield return null;
             }
             if(typingtext.talking == false && istalk == 8)
