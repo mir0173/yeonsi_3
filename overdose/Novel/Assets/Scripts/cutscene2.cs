@@ -15,6 +15,7 @@ public class cutscene2 : MonoBehaviour
     public TMP_Text choose1;
     public TMP_Text choose2;
     public GameObject obj;
+    public GameObject obj2;
     public int istalk;
     float speed = startcutscene.speed;
     
@@ -33,7 +34,10 @@ public class cutscene2 : MonoBehaviour
         Color d = ChooseBox.GetComponent<Image>().material.color; 
         d.a = 0; 
         ChooseBox.GetComponent<Image>().material.color = d;
-        StartCoroutine(Fade1(1.0f));
+        Color e = obj2.GetComponent<Renderer>().material.color; 
+        e.a = 0; 
+        obj2.GetComponent<Renderer>().material.color = e;
+        StartCoroutine(Fade1(1.5f));
 
     }
 
@@ -52,7 +56,7 @@ public class cutscene2 : MonoBehaviour
             runtime1 += Time.deltaTime;
 
             Color c = obj.GetComponent<Renderer>().material.color; 
-        	c.a = runtime1 * runtime1 / 1; 
+        	c.a = runtime1 * runtime1 / 2.25f; 
         	obj.GetComponent<Renderer>().material.color = c;   
             yield return null;
         }
@@ -70,11 +74,30 @@ public class cutscene2 : MonoBehaviour
             runtime4 += Time.deltaTime;
 
             Color c = obj.GetComponent<Renderer>().material.color; 
-        	c.a = 1 - runtime4 * runtime4 / 4; 
+        	c.a = 1 - runtime4 * runtime4 / 2.25f; 
         	obj.GetComponent<Renderer>().material.color = c;   
             yield return null;
         }
         yield return null;
+        StartCoroutine(Fade3(1.5f));
+        yield break;
+    }
+
+    IEnumerator Fade3(float duration)
+    {
+        var runtime5 = 0.0f;
+ 
+        while (runtime5 < duration)
+        {
+            runtime5 += Time.deltaTime;
+
+            Color c = obj2.GetComponent<Renderer>().material.color; 
+        	c.a = runtime5 * runtime5 / 2.25f; 
+        	obj2.GetComponent<Renderer>().material.color = c;   
+            yield return null;
+        }
+        yield return null;
+        StartCoroutine(Talk_Start2(1.5f));
         yield break;
     }
 
@@ -152,8 +175,25 @@ public class cutscene2 : MonoBehaviour
             yield return null;
         }
         yield return null;
-        StartCoroutine(Fade2(2.0f));
+        StartCoroutine(Fade2(1.5f));
         yield break;
+
+    }
+
+    IEnumerator Talk_Start2(float duration)
+    {
+        bool ischoose = false;
+        var runtime6 = 0.0f;
+        while (runtime6 < duration)
+        {
+            runtime6 += Time.deltaTime;
+            Color y = UI_Panel2.GetComponent<Image>().material.color; 
+        	y.a = runtime6 / 4f; 
+        	UI_Panel2.GetComponent<Image>().material.color = y;    
+            yield return null;
+        }
+        StartCoroutine(typingtext.Typing2(textfield_name2, textfield_text2, istalk, 0.07f * speed));
+        yield return null;
 
     }
 }

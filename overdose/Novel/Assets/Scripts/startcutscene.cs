@@ -213,7 +213,7 @@ public class startcutscene : MonoBehaviour
             yield return null;
         }
         yield return null;
-        StartCoroutine(NextScene(1.0f));
+        StartCoroutine(NextScene(1.5f));
         yield break;
     }
 
@@ -225,7 +225,7 @@ public class startcutscene : MonoBehaviour
         {
             runtime13 += Time.deltaTime;
             Color c = obj3.GetComponent<Renderer>().material.color; 
-        	c.a = 1 - runtime13 * runtime13 / 1; 
+        	c.a = 1 - runtime13 * runtime13 / 2.25f; 
         	obj3.GetComponent<Renderer>().material.color = c;    
             yield return null;
         }

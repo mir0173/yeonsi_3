@@ -14,12 +14,19 @@ public class typingtext : MonoBehaviour
     
     void Awake() 
     { 
-        myname = PlayerPrefs.GetString("name");
+
     } 
 
     public static IEnumerator Setname() 
     { 
-        myname = PlayerPrefs.GetString("name");
+        if(PlayerPrefs.HasKey("Key_Name"))
+        {
+            myname = PlayerPrefs.GetString("name");
+        }
+        else
+        {
+            myname = "디버깅";
+        }
         yield return null;
         yield break;
     } 
