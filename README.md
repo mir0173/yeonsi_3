@@ -1,13 +1,13 @@
 # yeonsi_3
 <h1 align="center"><b>
-bukgwakdose(Visual Novel Version 3)</b></h1>
+Starrail Fanmade(Visual Novel Version 3)</b></h1>
 <p align="center">
 <img src="https://img.shields.io/badge/made by-mir0173-red">
 <img src="https://img.shields.io/badge/Unity-3.26-yellow">
 </p>
 <br/><br/><br/><br/>
 
-동아리 개인 프로젝트
+개인 프로젝트
 
 |9~12|1|2(예상)|3~(예상)|~10|
 |---|---|---|---|---|
