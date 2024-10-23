@@ -22,11 +22,10 @@ bukgwakdose(Visual Novel Version 3)</b></h1>
 >시작 화면<br/>
 >씬 전환<br/>
 >이름 입력<br/>
->컷씬 1<br/>
 
 
 현재 진행중인 상황
->컷씬 2 구상중<br/>
+>컷씬 구상중<br/>
 
 <br/><br/><br/><br/>
 <p align="center"><b>진행중인 프로젝트</b></p>
