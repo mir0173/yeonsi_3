@@ -25,7 +25,7 @@ Starrail Fanmade(Visual Novel Version 3)</b></h1>
 
 
 현재 진행중인 상황
->컷씬 구상중<br/>
+>중단<br/>
 
 <br/><br/><br/><br/>
-<p align="center"><b>진행중인 프로젝트</b></p>
+<p align="center"><b>중단된 프로젝트</b></p>
